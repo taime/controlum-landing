@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Partners from './Partners.jsx'
 import {
   Button,
   Container,
@@ -14,20 +15,20 @@ import {
 } from 'semantic-ui-react'
 
 const FixedMenu = () => (
-  <Menu fixed='top' size='large'>
+  <Menu inverted pointing fixed='top' size='large'>
     <Container>
-      <Menu.Item as='a' active>Home</Menu.Item>
-      <Menu.Item as='a'>Work</Menu.Item>
-      <Menu.Item as='a'>Company</Menu.Item>
-      <Menu.Item as='a'>Careers</Menu.Item>
+        <Menu.Item position='left'>
+          <Button as='a' inverted>Controlum</Button>
+        </Menu.Item>
+
       <Menu.Menu position='right'>
-        <Menu.Item className='item'>
-          <Button as='a'>Log in</Button>
-        </Menu.Item>
-        <Menu.Item>
-          <Button as='a' primary>Sign Up</Button>
-        </Menu.Item>
+        <Menu.Item as='a' active>Начало</Menu.Item>
+        <Menu.Item as='a'>Партнеры</Menu.Item>
+        <Menu.Item as='a'>Кейсы</Menu.Item>
+        <Menu.Item as='a'>Команда</Menu.Item>
+        <Menu.Item as='a'>Контакты</Menu.Item>
       </Menu.Menu>
+
     </Container>
   </Menu>
 )
@@ -45,31 +46,34 @@ export default class HomepageLayout extends Component {
       <div>
         { visible ? <FixedMenu /> : null }
 
+        {/* HEAD */}
         <Visibility
           onBottomPassed={this.showFixedMenu}
           onBottomVisible={this.hideFixedMenu}
           once={false}
-        >
+          >
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '1em 0em', background:'center center no-repeat', backgorundSize:'cover', backgroundImage:'url(img/header-bg.jpg)' }}
             vertical
           >
             <Container>
-              <Menu inverted pointing secondary size='large' float='right'>
+              <Menu inverted pointing secondary size='large'>
                 <Menu.Item  position='left' >
                   <Button as='a' inverted>Controlum</Button>
                 </Menu.Item>
-                <Menu.Item as='a' active>Начало</Menu.Item>
-                <Menu.Item as='a'>Кейсы</Menu.Item>
-                <Menu.Item as='a'>Команда</Menu.Item>
-                <Menu.Item as='a'>Контакты</Menu.Item>
-
+                <Menu.Menu position='right'>
+                  <Menu.Item as='a' active>Начало</Menu.Item>
+                  <Menu.Item as='a'>Партнеры</Menu.Item>
+                  <Menu.Item as='a'>Кейсы</Menu.Item>
+                  <Menu.Item as='a'>Команда</Menu.Item>
+                  <Menu.Item as='a'>Контакты</Menu.Item>
+                </Menu.Menu>
               </Menu>
             </Container>
 
-            <Container text>
+            <Container text >
               <Header
                 as='h1'
                 content='Controlum Agency'
@@ -82,13 +86,22 @@ export default class HomepageLayout extends Component {
                 inverted
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               />
+              <br /><br />
               <Button primary size='huge'>
-                Get Started
+                Заказать веб-сайт, ios, adroid
                 <Icon name='right arrow' />
               </Button>
             </Container>
           </Segment>
         </Visibility>
+
+
+
+
+
+
+
+        <Partners />
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Grid container stackable verticalAlign='middle'>
