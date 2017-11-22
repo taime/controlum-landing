@@ -24,7 +24,9 @@ const PARTNERS = [
   {img:'william-lawsons.png'},
   {img:'parliament.png'},
   {img:'aeroflot.png'},
+  {img:'universal-music-group.png'},
   {img:'volkswagen.png'},
+  {img:'fightnights.png'},
 
 ]
 
